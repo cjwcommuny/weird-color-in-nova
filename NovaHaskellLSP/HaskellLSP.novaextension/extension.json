@@ -1,0 +1,41 @@
+{
+    "identifier": "cjwcommuny.HaskellLSP",
+    "name": "Haskell LSP",
+    "organization": "cjwcommuny",
+    "description": "Haskell Language Server ",
+    "version": "1.0",
+    "categories": ["languages"],
+    
+    "main": "main.js",
+    
+    "entitlements": {
+        "process": true,
+        "filesystem": "readonly"
+    },
+    "activationEvents": [
+        "onLanguage:hs",
+        "onLanguage:lhaskell",
+        "onLanguage:haskell",
+        "onWorkspaceContains:stack.yaml",
+        "onWorkspaceContains:*.cabal",
+        "onWorkspaceContains:cabal.project",
+        "onWorkspaceContains:package.yaml"
+    ],
+    "config": [
+        {
+            "key": "haskell.language-server-path",
+            "title": "Language Server (haskell-language-server) Path",
+            "type": "path",
+            "default": "/usr/bin/hls"
+        }
+    ],
+    "commands": {
+        "editor": [],
+        "extensions": [
+          {
+            "command": "haskell.restart",
+            "title": "Restart Haskell Language Server"
+          }
+        ]
+      },
+}
